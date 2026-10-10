@@ -1,0 +1,237 @@
+{
+  "site": {
+    "name": "El Tumi",
+    "logo": "/assets/figma/c4c0d.png",
+    "phone": "+51 902 356 348",
+    "whatsapp": "51902356348",
+    "hours": "Lunes a Domingo: 11:00 AM - 5:00 PM",
+    "address": "Ingenio, provincia de Concepción, Junín, Perú",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ingenio%2C%20Concepci%C3%B3n%2C%20Jun%C3%ADn%2C%20Per%C3%BA",
+    "mapImage": "/assets/figma/de77f.png",
+    "facebook": "",
+    "instagram": "",
+    "footerText": "Una experiencia gastronómica auténtica en el corazón de Ingenio, Junín. Tradición, familia y sabor campestre.",
+    "footerNotice": "Vista previa: carta, opiniones y ofertas de referencia pendientes de confirmación."
+  },
+  "hero": {
+    "title": "El Tumi",
+    "subtitle": "Una experiencia gastronómica en el corazón de Junín.",
+    "description": "Descubre los sabores auténticos de la sierra peruana en un entorno natural incomparable. Tradición, familia y naturaleza te esperan.",
+    "image": "/assets/figma/95b59.png",
+    "alt": "El Tumi iluminado al anochecer entre árboles",
+    "primaryLabel": "Conoce Tumi",
+    "secondaryLabel": "Escríbenos"
+  },
+  "story": {
+    "eyebrow": "Nuestra Historia",
+    "title": "Tradición que perdura en cada plato",
+    "paragraph1": "En Tumi, no solo servimos comida; compartimos la herencia de nuestra tierra. Ubicados en el hermoso valle de Ingenio, Junín, hemos creado un refugio donde la naturaleza y la gastronomía se abrazan.",
+    "paragraph2": "Cada receta ha sido transmitida de generación en generación, utilizando ingredientes locales frescos cultivados con respeto por la Pachamama. Nuestro compromiso es brindarte una experiencia cálida y familiar, como si estuvieras en casa.",
+    "image": "/assets/figma/a5129.png",
+    "alt": "Mesas y sombrillas en el jardín de El Tumi",
+    "features": [
+      {
+        "title": "Naturaleza",
+        "description": "Entorno rodeado de áreas verdes."
+      },
+      {
+        "title": "Gastronomía",
+        "description": "Sabores auténticos de la sierra."
+      },
+      {
+        "title": "Tradición",
+        "description": "Recetas ancestrales conservadas."
+      },
+      {
+        "title": "Familia",
+        "description": "Un espacio para compartir."
+      }
+    ]
+  },
+  "headings": {
+    "menu": {
+      "title": "Nuestro Menú",
+      "subtitle": "Sabores intensos, ingredientes rústicos y la maestría de la cocina de altura."
+    },
+    "gallery": {
+      "title": "Galería",
+      "subtitle": "Vive la experiencia Tumi a través de nuestra lente."
+    },
+    "reviews": {
+      "title": "Lo que dicen nuestros clientes",
+      "subtitle": "La satisfacción de quienes nos visitan es nuestro mayor orgullo. Autenticidad y sabor en cada testimonio."
+    },
+    "reviewClosing": "Visítanos y vive la experiencia Tumi",
+    "contact": {
+      "title": "Visítanos",
+      "subtitle": "Vive la experiencia Tumi en el corazón del valle de Ingenio."
+    },
+    "promotions": {
+      "title": "Nuestras Promociones",
+      "subtitle": "Aprovecha nuestras ofertas especiales y vive momentos inolvidables en familia."
+    },
+    "registration": {
+      "eyebrow": "Promociones y novedades",
+      "title": "Recibe promociones de El Tumi",
+      "description": "Déjanos tus datos y recibe promociones, novedades y beneficios especiales directamente en tu correo."
+    }
+  },
+  "dishes": [
+    {
+      "id": "pachamanca",
+      "name": "Pachamanca 3 Sabores",
+      "description": "Cordero, cerdo y pollo macerados en hierbas andinas, cocidos bajo tierra con papas nativas.",
+      "price": 30,
+      "category": "Platos Principales",
+      "image": "/assets/figma/52f84.png",
+      "visible": true
+    },
+    {
+      "id": "trucha",
+      "name": "Trucha Frita Especial",
+      "description": "Trucha fresca de la piscigranja de Ingenio, frita al punto exacto, acompañada de papas doradas.",
+      "price": 20,
+      "category": "Platos Principales",
+      "image": "/assets/figma/887da.png",
+      "visible": true
+    },
+    {
+      "id": "chicharron",
+      "name": "Chicharrón Colorado",
+      "description": "Trozos de cerdo dorados en su propia grasa, marinados con ají panca y especias locales.",
+      "price": 20,
+      "category": "Platos Principales",
+      "image": "/assets/figma/abe12.png",
+      "visible": true
+    },
+    {
+      "id": "cuy",
+      "name": "Cuy Chactado",
+      "description": "Cuy crocante servido con papas sancochadas y ensalada de cebolla.",
+      "price": 55,
+      "category": "Platos Principales",
+      "image": null,
+      "visible": true
+    },
+    {
+      "id": "lomo",
+      "name": "Lomo Saltado",
+      "description": "Finos cortes de carne salteados al wok con cebolla, tomate y papas fritas.",
+      "price": 48,
+      "category": "Platos Principales",
+      "image": null,
+      "visible": true
+    },
+    {
+      "id": "caldo",
+      "name": "Caldo de Mote",
+      "description": "Sustancioso caldo de cordero con mote, tripa y hierbabuena fresca.",
+      "price": 35,
+      "category": "Platos Principales",
+      "image": null,
+      "visible": true
+    }
+  ],
+  "banners": [
+    {
+      "id": "familia",
+      "image": "/assets/figma/4dc2d.png",
+      "alt": "Celebra el Día de la Familia. Promoción especial en platos típicos.",
+      "label": "",
+      "title": "",
+      "description": "",
+      "visible": true
+    },
+    {
+      "id": "andes",
+      "image": "/assets/figma/12f5f.png",
+      "alt": "Oferta especial de fin de semana",
+      "label": "OFERTA",
+      "title": "Sabor de los Andes",
+      "description": "Descuentos exclusivos en nuestra Pachamanca los fines de semana.",
+      "visible": true
+    }
+  ],
+  "gallery": [
+    {
+      "id": "gallery-0",
+      "image": "/assets/figma/bdc6f.png",
+      "alt": "Ambiente campestre del restaurante",
+      "layout": "large",
+      "visible": true
+    },
+    {
+      "id": "gallery-1",
+      "image": "/assets/figma/e91e8.png",
+      "alt": "Cuy tradicional",
+      "layout": "normal",
+      "visible": true
+    },
+    {
+      "id": "gallery-2",
+      "image": "/assets/figma/29886.png",
+      "alt": "Familia y naturaleza",
+      "layout": "normal",
+      "visible": true
+    },
+    {
+      "id": "gallery-3",
+      "image": "/assets/figma/40392.png",
+      "alt": "Bebidas para compartir",
+      "layout": "tall",
+      "visible": true
+    },
+    {
+      "id": "gallery-4",
+      "image": "/assets/figma/45e39.png",
+      "alt": "Sabores de la sierra",
+      "layout": "normal",
+      "visible": true
+    },
+    {
+      "id": "gallery-5",
+      "image": "/assets/figma/95816.png",
+      "alt": "Áreas verdes para disfrutar en familia",
+      "layout": "wide",
+      "visible": true
+    },
+    {
+      "id": "gallery-6",
+      "image": "/assets/figma/4ecea.png",
+      "alt": "Chicha morada",
+      "layout": "normal",
+      "visible": true
+    }
+  ],
+  "reviews": [
+    {
+      "name": "María García",
+      "text": "Una experiencia inolvidable. La pachamanca tiene ese sabor auténtico que solo se encuentra en el corazón de Junín. El ambiente natural es simplemente mágico.",
+      "id": "review-0",
+      "rating": 5,
+      "image": null,
+      "visible": true
+    },
+    {
+      "name": "Ricardo Alva",
+      "text": "La mejor trucha que he probado en mi vida. Se nota la frescura de los ingredientes locales. Un lugar perfecto para venir con toda la familia el fin de semana.",
+      "id": "review-1",
+      "rating": 5,
+      "image": null,
+      "visible": true
+    },
+    {
+      "name": "Sofía Torres",
+      "text": "Excelente atención y comida deliciosa. El restaurante Tumi es una parada obligatoria si estás por Ingenio. ¡Totalmente recomendado!",
+      "id": "review-2",
+      "rating": 5,
+      "image": null,
+      "visible": true
+    }
+  ],
+  "legal": {
+    "privacy": "El Tumi utiliza tu nombre, correo y teléfono para identificarte y enviarte promociones cuando aceptas recibirlas. No necesitas crear una cuenta. Guardamos la fecha de tu aceptación. Puedes solicitar la actualización de tus datos contactando al restaurante. Los correos promocionales incluyen un enlace de baja. El texto definitivo de privacidad está pendiente de validación antes del lanzamiento público.",
+    "consent": "El Tumi utiliza tu nombre, correo y teléfono para identificarte y enviarte promociones cuando aceptas recibirlas. No necesitas crear una cuenta. Guardamos la fecha de tu aceptación. Puedes solicitar la actualización de tus datos contactando al restaurante. Los correos promocionales incluyen un enlace de baja. El texto definitivo de privacidad está pendiente de validación antes del lanzamiento público.",
+    "terms": "El sitio presenta información del restaurante. El registro no crea una reserva ni un pedido. Las condiciones y vigencias de cada promoción se comunicarán junto con el beneficio. La carta y las ofertas de esta vista previa deben confirmarse con el local."
+  }
+}

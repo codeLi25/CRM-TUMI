@@ -1,0 +1,419 @@
+.page {
+    color: var(--forest);
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 26px;
+}
+
+.heading h1 {
+    font-size: 30px;
+    letter-spacing: -1px;
+}
+
+.heading p {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+.badge {
+    background: #dcf0df;
+    border-radius: 16px;
+    padding: 6px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.workspace {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.card,
+.history {
+    background: white;
+    border: 1px solid #e6e9e3;
+    border-radius: 10px;
+    padding: 24px;
+    min-width: 0;
+}
+
+.card h2,
+.history h2 {
+    font-size: 19px;
+}
+
+.help {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 12px 0;
+}
+
+.page form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.page label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.page input {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid #c1c8c2;
+    padding: 12px;
+    border-radius: 5px;
+    background: #f7faf4;
+    color: var(--forest);
+}
+
+.primary,
+.secondary {
+    border: 0;
+    border-radius: 4px;
+    padding: 11px 15px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary {
+    background: var(--green);
+    color: white;
+}
+
+.secondary {
+    background: #e6e9e3;
+    color: var(--forest);
+}
+
+.primary:hover {
+    background: var(--forest);
+}
+
+.offer,
+.confirmation {
+    border: 1px solid #dbe7d9;
+    background: #f7faf4;
+    border-radius: 8px;
+    padding: 18px;
+    margin: 20px 0;
+    overflow-wrap: anywhere;
+}
+
+.offer h3,
+.confirmation h3 {
+    margin: 12px 0;
+}
+
+.offer p,
+.confirmation p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+.confirmation small {
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.confirmation hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #dbe7d9;
+}
+
+.preserve {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.empty {
+    text-align: center;
+    padding: 40px 16px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.empty img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 12px;
+}
+
+.empty h3 {
+    color: var(--forest);
+    margin: 10px 0;
+}
+
+.empty span {
+    display: block;
+    font-size: 11px;
+    margin-top: 24px;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.error,
+.success {
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 14px 0;
+}
+
+.error {
+    background: #fff0ec;
+    color: #8f201b;
+}
+
+.success {
+    background: #e1f0e4;
+    color: var(--forest);
+}
+
+.history header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.history header p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.search {
+    flex: 1;
+    min-width: 180px;
+}
+
+.tableScroll {
+    overflow-x: auto;
+}
+
+.tableScroll table {
+    border-collapse: collapse;
+}
+
+.tableScroll table {
+    width: 100%;
+    text-align: left;
+    font-size: 12px;
+}
+
+.tableScroll th {
+    color: var(--muted);
+    background: var(--surface);
+}
+
+.tableScroll td,
+.tableScroll th {
+    padding: 14px 10px;
+    border-bottom: 1px solid #e6e9e3;
+}
+
+.tableScroll td {
+    min-width: 140px;
+    max-width: 300px;
+    overflow-wrap: anywhere;
+}
+
+.tableScroll small {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.dialog {
+    width: min(540px, calc(100vw - 24px));
+    max-height: calc(100svh - 32px);
+    border: 1px solid #d8ddd5;
+    border-radius: 10px;
+    padding: 22px;
+    color: var(--forest);
+}
+
+.dialog::backdrop {
+    background: #012d1d88;
+    backdrop-filter: blur(3px);
+}
+
+.dialogHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.dialogHeader h2 {
+    font-size: 20px;
+}
+
+.dialogHeader p {
+    font-size: 12px;
+    margin-top: 6px;
+    color: var(--muted);
+}
+
+.receiptScroll {
+    overflow-x: auto;
+    background: #f2f5ee;
+    padding: 12px 0;
+}
+
+.receiptMeasure {
+    width: 80mm;
+    margin: auto;
+}
+
+.receipt {
+    width: 80mm;
+    padding: 4mm;
+    background: white;
+    color: #111;
+    font: 10pt/1.5 Arial, sans-serif;
+    overflow-wrap: anywhere;
+    box-shadow: 0 2px 8px #0001;
+}
+
+.receipt header,
+.receipt section,
+.receipt footer {
+    text-align: center;
+}
+
+.receipt h2 {
+    font-size: 18pt;
+    margin: 0;
+}
+
+.receipt h3 {
+    font-size: 12pt;
+    margin: 8px 0;
+}
+
+.receipt p {
+    margin: 5px 0;
+}
+
+.receipt header p,
+.receipt footer {
+    font-size: 8pt;
+}
+
+.receipt hr {
+    border: 0;
+    border-top: 1px dashed #777;
+    margin: 12px 0;
+}
+
+.ticketId {
+    font-size: 9px;
+    overflow-wrap: anywhere;
+}
+
+.printRoot {
+    display: none;
+}
+
+@media(max-width:900px) {
+    .workspace {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:600px) {
+
+    .heading,
+    .history header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .heading h1 {
+        font-size: 26px;
+    }
+
+    .card,
+    .history {
+        padding: 18px;
+    }
+
+    .dialog {
+        padding: 14px;
+    }
+
+    .filters label:not(.search) {
+        flex: 1;
+    }
+
+    .search {
+        flex-basis: 100%;
+    }
+}
+
+@media print {
+    .printRoot {
+        display: block !important;
+        width: 80mm;
+        margin: 0;
+    }
+
+    .receipt {
+        box-shadow: none;
+    }
+
+    .printRoot,
+    .receipt {
+        break-inside: avoid;
+    }
+
+    :global(body) {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+    }
+}

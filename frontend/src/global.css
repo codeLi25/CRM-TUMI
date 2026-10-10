@@ -1,0 +1,105 @@
+:root {
+    font-family: Inter, sans-serif;
+    color: #191d19;
+    background: #f7faf4;
+    font-synthesis: none;
+    font-weight: 400;
+    --forest: #012d1d;
+    --green: #1b4332;
+    --muted: #414844;
+    --gold: #775a00;
+    --line: #c1c8c2;
+    --surface: #f2f5ee
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0
+}
+
+button,
+input {
+    font: inherit
+}
+
+button,
+a,
+input {
+    touch-action: manipulation
+}
+
+button {
+    cursor: pointer
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: .6
+}
+
+a {
+    color: var(--gold)
+}
+
+a:hover {
+    text-decoration: none
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid #ad861c;
+    outline-offset: 3px
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--forest);
+    margin: 0
+}
+
+p {
+    margin: 0;
+    line-height: 1.5
+}
+
+button {
+    border: 0
+}
+
+button img {
+    pointer-events: none
+}
+
+img {
+    display: block
+}
+
+a {
+    text-underline-offset: 3px
+}
+
+/* Shared link and feedback behavior across public and administrative routes. */
+a:any-link, a:any-link:hover, a:any-link:focus, a:any-link:active { text-decoration: none; }
+.loadingIndicator { display:inline-flex; align-items:center; justify-content:center; gap:10px; }
+.loadingBlock { padding:24px; }
+.loadingSpinner { width:18px; height:18px; flex-shrink:0; border:2px solid currentColor; border-right-color:transparent; border-radius:50%; animation:tumi-spin .8s linear infinite; }
+@keyframes tumi-spin { to { transform:rotate(360deg); } }
+@media(prefers-reduced-motion:reduce){ .loadingSpinner { animation:none; border-style:dotted; } }
+
+/* Shared scrollbars keep carousels, tables and admin dialogs usable. */
+@media (forced-colors: none) {
+    * { scrollbar-width: thin; scrollbar-color: #5c7a60 #edf1e7; }
+    *::-webkit-scrollbar { width: 9px; height: 9px; }
+    *::-webkit-scrollbar-track { background: #edf1e7; border-radius: 12px; }
+    *::-webkit-scrollbar-thumb { background: #5c7a60; border: 2px solid #edf1e7; border-radius: 12px; }
+    *::-webkit-scrollbar-thumb:hover { background: #244b31; }
+    *::-webkit-scrollbar-corner { background: transparent; }
+    *::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+}
+dialog { scrollbar-gutter: stable; overscroll-behavior: contain; }

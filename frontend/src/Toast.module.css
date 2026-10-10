@@ -1,0 +1,5 @@
+.toast { position:fixed; top:84px; right:24px; z-index:1000; width:min(420px,calc(100vw - 32px)); display:flex; align-items:flex-start; gap:12px; padding:16px; border:1px solid #aed5ba; border-left:4px solid #1b4332; border-radius:8px; background:#f2fff5; color:#012d1d; box-shadow:0 6px 24px #012d1d26; font-size:13px; line-height:1.5; }
+.toast { pointer-events:none; }
+.toast p { margin:0; flex:1; }.check { color:#1b4332; font-weight:700; }.toast button { pointer-events:auto; padding:0 4px; border:0; background:transparent; color:#012d1d; font-size:22px; line-height:1; }
+@media(max-width:600px) { .toast { top:16px; right:16px; } }
+@media print { .toast { display:none!important; } }

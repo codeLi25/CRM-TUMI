@@ -1,0 +1,15 @@
+CREATE TABLE `SiteContent` (
+ `id` INTEGER NOT NULL, `revision` INTEGER NOT NULL DEFAULT 1, `publishedRevision` INTEGER NOT NULL DEFAULT 1,
+ `draft` JSON NOT NULL, `published` JSON NOT NULL,
+ `updatedAt` DATETIME(3) NOT NULL, `publishedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+ PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE TABLE `SitePublication` (
+ `id` CHAR(36) NOT NULL, `revision` INTEGER NOT NULL, `content` JSON NOT NULL,
+ `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+ PRIMARY KEY (`id`), UNIQUE INDEX `SitePublication_revision_key` (`revision`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE TABLE `SiteAsset` (
+ `file` VARCHAR(50) NOT NULL, `published` BOOLEAN NOT NULL DEFAULT false,
+ `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3), PRIMARY KEY (`file`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

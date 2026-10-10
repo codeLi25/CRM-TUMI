@@ -1,0 +1,1 @@
+ALTER TABLE `Promotion` ADD COLUMN `deletedAt` DATETIME(3) NULL;

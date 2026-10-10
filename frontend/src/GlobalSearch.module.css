@@ -1,0 +1,125 @@
+.search {
+    display: flex;
+    align-items: center;
+    background: #f2f5ee;
+    border: 1px solid #dce5da;
+    border-radius: 6px;
+    min-width: 160px;
+    max-width: 330px;
+    flex: 1
+}
+
+.search input {
+    min-width: 0;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    padding: 10px;
+    font-size: 12px;
+    color: #23452e
+}
+
+.search button {
+    padding: 9px;
+    background: transparent;
+    flex-shrink: 0
+}
+
+.search img {
+    width: 16px;
+    height: 16px
+}
+
+.dialog {
+    width: min(620px, calc(100% - 24px));
+    max-height: 85vh;
+    border: 0;
+    border-radius: 14px;
+    padding: 24px;
+    color: #23452e;
+    box-shadow: 0 20px 60px #0004
+}
+
+.dialog::backdrop {
+    background: #10251fc4
+}
+
+.dialog header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px
+}
+
+.dialog h2 {
+    font-size: 22px
+}
+
+.dialog button {
+    border: 1px solid #d5dfd2;
+    border-radius: 6px;
+    background: white;
+    color: #23452e;
+    padding: 8px 12px
+}
+
+.dialog section {
+    margin: 22px 0
+}
+
+.dialog h3 {
+    font-size: 15px;
+    margin-bottom: 8px
+}
+
+.dialog a {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 12px;
+    border-radius: 6px;
+    background: #f4f7ef;
+    margin: 5px 0;
+    color: #23452e;
+    font-size: 13px
+}
+
+.dialog a:hover {
+    background: #e6eddd
+}
+
+.dialog span,
+.dialog p,
+.dialog small {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #677467;
+    overflow-wrap: anywhere
+}
+
+.dialog .all {
+    background: transparent;
+    font-weight: 600
+}
+
+.error {
+    color: #9e352a;
+    padding: 16px
+}
+
+.error button {
+    margin-left: 12px
+}
+
+@media(max-width:900px) {
+    .search {
+        order: 5;
+        flex-basis: 100%;
+        max-width: none
+    }
+
+    .dialog {
+        padding: 18px
+    }
+}

@@ -1,0 +1,157 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+model Admin {
+  id           String   @id @default(uuid()) @db.Char(36)
+  email        String   @unique @db.VarChar(254)
+  name         String   @db.VarChar(100)
+  passwordHash String   @db.VarChar(255)
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now()) @db.DateTime(3)
+  sessions     Session[]
+  resets       PasswordReset[]
+}
+model Session {
+  tokenHash String   @id @db.Char(64)
+  adminId   String   @db.Char(36)
+  expiresAt DateTime @db.DateTime(3)
+  createdAt DateTime @default(now()) @db.DateTime(3)
+  admin     Admin    @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  @@index([adminId])
+  @@index([expiresAt])
+}
+model PasswordReset {
+  tokenHash String   @id @db.Char(64)
+  adminId   String   @db.Char(36)
+  expiresAt DateTime @db.DateTime(3)
+  createdAt DateTime @default(now()) @db.DateTime(3)
+  admin     Admin    @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  @@index([adminId])
+  @@index([expiresAt])
+}
+
+model Customer {
+  id             String   @id @default(uuid()) @db.Char(36)
+  deletedAt      DateTime? @db.DateTime(3)
+  revision       Int      @default(1)
+  name           String   @db.VarChar(100)
+  email          String   @unique @db.VarChar(254)
+  phone          String   @unique @db.VarChar(12)
+  subscribed     Boolean  @default(true)
+  consentAt      DateTime @db.DateTime(3)
+  consentVersion String   @db.VarChar(40)
+  source         String   @default("web") @db.VarChar(20)
+  createdAt      DateTime @default(now()) @db.DateTime(3)
+  recipients     CampaignRecipient[]
+  redemptions    Redemption[]
+  redemptionCount Int @default(0)
+  lastRedemptionAt DateTime? @db.DateTime(3)
+  @@index([createdAt])
+}
+
+model Promotion {
+  id         String @id @default(uuid()) @db.Char(36)
+  name       String @db.VarChar(120)
+  benefit    String @db.VarChar(500)
+  conditions String @db.Text
+  code       String @unique @db.VarChar(40)
+  imageUrl   String @db.VarChar(500)
+  startsAt   DateTime @db.DateTime(3)
+  endsAt     DateTime @db.DateTime(3)
+  paused     Boolean @default(false)
+  redemptionLimit Int?
+  deletedAt  DateTime? @db.DateTime(3)
+  revision   Int @default(1)
+  createdAt  DateTime @default(now()) @db.DateTime(3)
+  updatedAt  DateTime @updatedAt @db.DateTime(3)
+  campaigns  Campaign[]
+  redemptions Redemption[]
+  @@index([startsAt, endsAt])
+}
+
+model Campaign {
+  id           String @id @default(uuid()) @db.Char(36)
+  requestKey   String @unique @db.Char(36)
+  promotionId  String @db.Char(36)
+  promotion    Promotion @relation(fields: [promotionId], references: [id])
+  subject      String @db.VarChar(150)
+  preheader    String @db.VarChar(200)
+  segment      String @db.VarChar(20)
+  mode         String @db.VarChar(10)
+  status       String @default("queued") @db.VarChar(20)
+  snapshot     Json
+  scheduledAt  DateTime @db.DateTime(3)
+  createdAt    DateTime @default(now()) @db.DateTime(3)
+  startedAt    DateTime? @db.DateTime(3)
+  finishedAt   DateTime? @db.DateTime(3)
+  leaseUntil   DateTime? @db.DateTime(3)
+  leaseOwner   String? @db.Char(36)
+  note         String? @db.VarChar(255)
+  recipients   CampaignRecipient[]
+  @@index([status, mode, scheduledAt])
+}
+
+model CampaignRecipient {
+  id          String @id @default(uuid()) @db.Char(36)
+  campaignId  String @db.Char(36)
+  customerId  String @db.Char(36)
+  campaign    Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  customer    Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  email       String @db.VarChar(254)
+  name        String @db.VarChar(100)
+  tokenHash   String @unique @db.Char(64)
+  status      String @default("pending") @db.VarChar(20)
+  attempts    Int @default(0)
+  retryAt     DateTime @default(now()) @db.DateTime(3)
+  processedAt DateTime? @db.DateTime(3)
+  detail      String? @db.VarChar(255)
+  messageId   String? @db.VarChar(255)
+  html        String @db.LongText
+  text        String @db.Text
+  @@unique([campaignId, customerId])
+  @@index([campaignId, status, retryAt])
+}
+
+model Redemption {
+  id String @id @default(uuid()) @db.Char(36)
+  requestKey String @unique @db.Char(36)
+  customerId String @db.Char(36)
+  promotionId String @db.Char(36)
+  customer Customer @relation(fields: [customerId], references: [id])
+  promotion Promotion @relation(fields: [promotionId], references: [id])
+  createdAt DateTime @default(now()) @db.DateTime(3)
+  customerName String @db.VarChar(100)
+  customerPhone String @db.VarChar(12)
+  promotionName String @db.VarChar(120)
+  code String @db.VarChar(40)
+  benefit String @db.VarChar(500)
+  conditions String @db.Text
+  @@unique([customerId, promotionId])
+  @@index([createdAt, id])
+  @@index([promotionId])
+}
+
+model SiteContent {
+  id Int @id
+  revision Int @default(1)
+  publishedRevision Int @default(1)
+  draft Json
+  published Json
+  updatedAt DateTime @updatedAt @db.DateTime(3)
+  publishedAt DateTime @default(now()) @db.DateTime(3)
+}
+model SitePublication {
+  id String @id @default(uuid()) @db.Char(36)
+  revision Int @unique
+  content Json
+  createdAt DateTime @default(now()) @db.DateTime(3)
+}
+model SiteAsset {
+  file String @id @db.VarChar(50)
+  published Boolean @default(false)
+  createdAt DateTime @default(now()) @db.DateTime(3)
+}
